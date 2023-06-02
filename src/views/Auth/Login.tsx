@@ -13,12 +13,12 @@ type LoginValues = {
 export const Login: React.FC = () => {
   const [loginState, login] = useAsyncFn(async (values: LoginValues) => {
     const response = await fetch(`${API_URL}/auth/login`, {
-      method: "POST",
+      method:"POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type":"application/json",
       },
       body: JSON.stringify(values),
-      credentials: "include",
+      credentials:"include",
     });
 
     if (!response.ok) {
